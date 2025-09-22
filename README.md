@@ -51,36 +51,7 @@ To run this showcase locally, install a web server stack like **XAMPP**, **MAMP*
 
 ---
 
-# ⚠️ Vulnerability 1: Command Execution
-
-### 🔎 Where?
-
-- Source: `typeBox` parameter via `$_GET`
-
-### 🛠️ Problem:
-
-- Only filters a few characters (`&&`, `;`, `/`, `\`)
-- Dangerous commands using `|`, `||`, backticks (\`) are still allowed
-- Passes input directly to `shell_exec()` – very risky!
-
-### 💥 Impact:
-
-- Attacker can run system-level commands
-- Could lead to:
-  - File/system access
-  - Full server compromise
-  - Information theft
-
-### ✅ Secure Implementation:
-
-- Use a whitelist of allowed commands
-- Validate and sanitize all inputs strictly
-- Escape output before displaying
-- Avoid direct use of `shell_exec` if possible
-
-## Avoid direct use of shell_exec if possible
-
-# ⚠️ Vulnerability 2: Cross-Site Scripting (XSS)
+# ⚠️ Vulnerability 1: Cross-Site Scripting (XSS)
 
 ### 🔎 Where?
 
@@ -108,7 +79,7 @@ To run this showcase locally, install a web server stack like **XAMPP**, **MAMP*
 
 ---
 
-# ⚠️ Vulnerability 3: Private Key Exposure
+# ⚠️ Vulnerability 2: Private Key Exposure
 
 ### 🔎 Where?
 
@@ -133,7 +104,7 @@ To run this showcase locally, install a web server stack like **XAMPP**, **MAMP*
 
 ---
 
-# ⚠️ Vulnerability 4: PHPMailer Header Injection
+# ⚠️ Vulnerability 3: PHPMailer Header Injection
 
 ### 🔎 Where?
 
@@ -160,7 +131,7 @@ To run this showcase locally, install a web server stack like **XAMPP**, **MAMP*
 
 ---
 
-# ⚠️ Vulnerability 5: IaC Misconfiguration
+# ⚠️ Vulnerability 4: IaC Misconfiguration
 
 ### 🔎 Where?
 
